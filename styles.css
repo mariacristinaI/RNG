@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+@font-face {
+  font-family:"Casino";
+  src: url("assets/Casino.ttf");
+}
+
+:root {
+  --yellow-shade:#E3C048;
+  --dark-red:#3B1B1A;
+  --dark-maroon:#75261F;
+  --tavern-red: #55110d;
+  --red-confetti: #AF221B;
+}
+
+body {
+  background-color: #657C52;
+  font-family: "Casino";
+}
+
+.vignette {
+  box-shadow: 0 0 200px rgba(0,0,0,0.9) inset;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+fieldset {
+  background-color: rgba(7, 7, 4, 0.5);
+  border-color:var(--yellow-shade);
+  border-radius: 70px;
+  border-style: groove;
+  border-width: 2px 0px 2px 0px;
+  box-shadow: 5px 5px 10px var(--dark-red);
+  color:#DCC6AE;
+  font-size: 2.5rem;
+  text-align: center;
+  display:block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: auto;
+  padding: 0px;
+  width: 55%;
+  transform: translate(-50%, -50%);
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+}
+
+h1 {
+  color:#E1D1BA;
+  font-family: "Casino";
+  font-size: 3.5rem;
+  text-shadow:
+    3px 3px 0 var(--dark-maroon),
+    -1px -1px 0 var(--dark-maroon),  
+    1px -1px 0 var(--dark-maroon),
+    -1px 1px 0 var(--dark-maroon),
+    1px 1px 0 var(--dark-maroon);
+  -webkit-text-stroke: 1px solid red;
+}
+
+input {
+  background-color: #F5EBE1;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+button {
+  box-shadow: 5px 5px 10px var(--dark-red);
+  font-family: "Casino";
+  font-size: 2rem;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+}
+  button:hover {
+    background-color:var(--yellow-shade);
+  }
+
+#lucky {
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 3rem;
+  margin: 2%;
+}
+
+#result {
+  font-family: "Casino";
+  font-size: 3.5rem;
+  color: #709155;
+  border-radius: 50%;
+  margin-bottom: 4%;
+  width: 100px;
+  height: 100px;
+  text-shadow:
+    3px 3px 0 var(--dark-maroon),
+    -1px -1px 0 var(--dark-maroon),  
+    1px -1px 0 var(--dark-maroon),
+    -1px 1px 0 var(--dark-maroon),
+    1px 1px 0 var(--dark-maroon);
+  -webkit-text-stroke: 4px solid red; 
+}
+
+#chip {
+  border: 13px dashed white;
+  border-radius: 50%;
+  display: block;
+  line-height: 100px;
+  position: relative;
+  width: 120px;
+  height: 100px;
+  margin: 30px auto;
+}
+    #chip:before {
+      background: var(--tavern-red);
+      border-radius: 50%;
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: -16px;
+  }
+  #chip:after {
+    background: rgba(0,0,0,0.4);
+    border: 3px dashed white;
+    border-radius: 50%;
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 5px;
+  }
+
+
+.confetti-button {
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+} 
+  .confetti-button:focus { outline: 0; }
+  .confetti-button:before, .confetti-button:after {
+    background-repeat: no-repeat;
+    content: '';
+    display: block;
+    position: absolute;
+    left: -20%;
+    transition: all ease-in-out 0.5s;
+    width: 140%;
+    height: 100%;
+    z-index: -1000;
+  }
+  .confetti-button:before {
+    background-image: radial-gradient(circle, var(--red-confetti) 20%, transparent 20%), radial-gradient(circle, transparent 20%, var(--red-confetti) 20%, transparent 30%), radial-gradient(circle, var(--red-confetti) 20%, transparent 20%), radial-gradient(circle, var(--red-confetti) 20%, transparent 20%), radial-gradient(circle, transparent 10%, var(--red-confetti) 15%, transparent 20%), radial-gradient(circle, var(--red-confetti) 20%, transparent 20%), radial-gradient(circle, var(--red-confetti) 20%, transparent 20%), radial-gradient(circle, var(--red-confetti) 20%, transparent 20%), radial-gradient(circle, var(--red-confetti) 20%, transparent 20%);
+    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+    display: none;
+    top: -75%;
+  }
+  
+  .confetti-button:after {
+    background-image: radial-gradient(circle, var(--red-confetti) 20%, transparent 20%), radial-gradient(circle, var(--red-confetti) 20%, transparent 20%), radial-gradient(circle, transparent 10%, var(--red-confetti) 15%, transparent 20%), radial-gradient(circle, var(--red-confetti) 20%, transparent 20%), radial-gradient(circle, var(--red-confetti) 20%, transparent 20%), radial-gradient(circle, var(--red-confetti) 20%, transparent 20%), radial-gradient(circle, var(--red-confetti) 20%, transparent 20%);
+    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+    display: none;
+    bottom: -75%;
+  }
+
+  .confetti-button.animate:before {
+    animation: topConfetti ease-in-out 0.75s forwards;
+    display: block;
+  }
+  
+  .confetti-button.animate:after {
+    animation: bottomConfetti ease-in-out 0.75s forwards;
+    display: block;
+  }
+  @keyframes topConfetti {  
+    0% {
+      background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+    }
+    50% {
+      background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+    }
+    100% {
+      background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+      background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+  }
+  @keyframes
+  bottomConfetti {
+    0% {
+      background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+    }
+    50% {
+      background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+    }
+    100% {
+      background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+      background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+  }
+
+
+
+.lights {
+  display:inline-block;
+  z-index: 1;
+  animation-delay: 0.2s;
+  -moz-animation-delay: 0.2s;
+  -webkit-animation-delay: 0.2s;
+  animation-name: rotatelights;
+  -webkit-animation-name: rotatelights;
+  animation-duration: 7s;
+  -webkit-animation-duration: 7s;
+  animation-iteration-count: infinite;
+  opacity: 0.6;
+}
+
+.purple-light {
+  display:inline-block;
+  background: url('https://static.gammatrix-dev.net/WonderlandCasino/img/casino-lights1.png') center top no-repeat transparent;
+  top: 100px;
+  right: 200px;
+  width: 261px;
+  height: 90vh;
+}
+
+.green-light {
+  display:inline-block;
+  animation-name: rotatelights2;
+  -webkit-animation-name: rotatelights2;
+  background: url('https://static.gammatrix-dev.net/WonderlandCasino/img/casino-lights2.png') center top no-repeat transparent;
+  top: 130px;
+  right: 0px;
+  bottom:0;
+  width: 346px;
+  height: 70vh;
+}
+
+@keyframes rotatelights {
+  0% {
+    transform: rotate(-25deg);
+    -ms-transform: rotate(-25deg);
+    -o-transform: rotate(-25deg);
+  }
+  50% {
+    transform: rotate(25deg);
+    -ms-transform: rotate(25deg);
+    -o-transform: rotate(25deg);
+  }
+  100% {
+    transform: rotate(-25deg);
+    -ms-transform: rotate(-25deg);
+    -o-transform: rotate(-25deg);
+  }
+}
+
+@-webkit-keyframes rotatelights {
+  0% {
+    transform: rotate(-25deg);
+    -webkit-transform: rotate(-25deg);
+  }
+  50% {
+    transform: rotate(25deg);
+    -webkit-transform: rotate(25deg);
+  }
+  100% {
+    transform: rotate(-25deg);
+    -webkit-transform: rotate(-25deg);
+  }
+}
+
+@-moz-keyframes rotatelights {
+  0% {
+    transform: rotate(-25deg);
+    -moz-transform: rotate(-25deg);
+  }
+  50% {
+    transform: rotate(25deg);
+    -moz-transform: rotate(25deg);
+  }
+  100% {
+    transform: rotate(-25deg);
+    -moz-transform: rotate(-25deg);
+  }
+}
+
+@keyframes rotatelights2 {
+  0% {
+    transform: rotate(-25deg);
+    -ms-transform: rotate(25deg);
+    -o-transform: rotate(25deg);
+  }
+  50% {
+    transform: rotate(25deg);
+    -ms-transform: rotate(25deg);
+    -o-transform: rotate(25deg);
+  }
+  100% {
+    transform: rotate(-25deg);
+    -ms-transform: rotate(-25deg);
+    -o-transform: rotate(-25deg);
+  }
+}
+
+@-webkit-keyframes rotatelights2 {
+  0% {
+    transform: rotate(-25deg);
+    -webkit-transform: rotate(-25deg);
+  }
+  50% {
+    transform: rotate(25deg);
+    -webkit-transform: rotate(25deg);
+  }
+  100% {
+    transform: rotate(-25deg);
+    -webkit-transform: rotate(-25deg);
+  }
+}
+
+@-moz-keyframes rotatelights2 {
+  0% {
+    transform: rotate(-25deg);
+    -moz-transform: rotate(-25deg);
+  }
+  50% {
+    transform: rotate(25deg);
+    -moz-transform: rotate(25deg);
+  }
+  100% {
+    transform: rotate(-25deg);
+    -moz-transform: rotate(-25deg);
+  }
+}
+
+footer {
+  background: var(--tavern-red);
+  border-top:2px solid #468966;
+  color:white;
+  text-align:center;
+  bottom:0;
+  left:0;
+  padding:10px;
+  width:99%;
+}
