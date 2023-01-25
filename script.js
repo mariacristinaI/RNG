@@ -12,7 +12,3 @@ function randomNumberGenerator() {
   let finalnumber = Math.floor(Math.random() * (max - min) + min);
   document.getElementById('result').value = finalnumber;
 }
-
-const today = new Date();
-let currentYear = today.getFullYear();
-document.getElementById("year").innerHTML = currentYear;
