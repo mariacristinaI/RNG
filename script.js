@@ -9,6 +9,16 @@ function randomNumberGenerator() {
       alert("Error: Max value must be greater than min value.");
       return;
   }
-  let finalnumber = Math.floor(Math.random() * (max - min) + min);
+  let finalnumber = Math.floor(Math.random() * (max - min + 1) + min);
   document.getElementById('result').value = finalnumber;
 }
+
+const confettiBtn = document.getElementById("confetti-btn");
+
+confettiBtn.addEventListener("click", function() {
+  confetti({
+    particleCount: 100,
+    spread: 70,
+    origin: { y: 0.6 }
+  });
+});

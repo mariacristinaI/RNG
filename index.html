@@ -13,19 +13,19 @@
     </head>
     <body>
         <main>
-            <div class="vignette"></div>
             <fieldset>
                 <h1><img class="icon" src="assets/diamond.png"><img class="icon" src="assets/diamond.png"><img class="icon" src="assets/diamond.png"> Random  Number  Generator <img class="icon" src="assets/diamond.png"><img class="icon" src="assets/diamond.png"><img class="icon" src="assets/diamond.png"></h1>
                 <p>Min: <label for="min"><input id="min" name="min" type="number"></label></p>
                 <p>Max: <label for="max"><input id="max" name="max" type="number"></label></p>
-                <button class="confetti-button" id="generate-btn" onclick="randomNumberGenerator()">Generate Number</button>
+                <button id="confetti-btn" class="confetti-button" onclick="randomNumberGenerator()">Generate Number</button>
                 <p id="lucky">Lucky Number:</p><div id="chip"><input id="result"></div>
             </fieldset>
             <div> </div>
-                <div class="lights purple-light"> </div>
-                <div class="lights green-light"> </div>
+                <div class="lights purple-light"><img src="assets/casino-lights1.png"></div>
+                <div class="lights green-light"><img src="assets/casino-lights2.png"></div>
         </main>
-        <footer> &copy;2023 MCI</footer>
+        <footer> &copy;2023 <a href="https://github.com/mariacristinaI" target="_blank">MCI</a></footer>
         <script src="script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.0.1"></script>
     </body>
 </html>

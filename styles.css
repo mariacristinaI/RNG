@@ -12,22 +12,34 @@
   --red-confetti: #AF221B;
 }
 
-body {
-  background-color: #657C52;
-  font-family: "Casino";
+* {
+  box-sizing: border-box;
 }
 
-.vignette {
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #657C52;
   box-shadow: 0 0 200px rgba(0,0,0,0.9) inset;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  font-family: "Casino";
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  margin: 0;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 fieldset {
   background-color: rgba(7, 7, 4, 0.5);
+  backdrop-filter: blur(55px);
   border-color:var(--yellow-shade);
   border-radius: 70px;
   border-style: groove;
@@ -36,14 +48,9 @@ fieldset {
   color:#DCC6AE;
   font-size: 2.5rem;
   text-align: center;
-  display:block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: auto;
-  padding: 0px;
-  width: 55%;
-  transform: translate(-50%, -50%);
+  padding: 50px;
+  max-width: 1200px;
+  width: 100%;
 }
 
 .icon {
@@ -54,7 +61,7 @@ fieldset {
 h1 {
   color:#E1D1BA;
   font-family: "Casino";
-  font-size: 3.5rem;
+  font-size: 3rem;
   text-shadow:
     3px 3px 0 var(--dark-maroon),
     -1px -1px 0 var(--dark-maroon),  
@@ -86,7 +93,6 @@ button {
 }
 
 #result {
-  font-family: "Casino";
   font-size: 3.5rem;
   color: #709155;
   border-radius: 50%;
@@ -107,8 +113,8 @@ button {
   display: block;
   line-height: 100px;
   position: relative;
-  width: 120px;
-  height: 100px;
+  width: 130px;
+  height: 130px;
   margin: 30px auto;
 }
     #chip:before {
@@ -206,69 +212,132 @@ button {
     }
   }
 
-
-.lights {
-  display:inline-block;
-  z-index: 1;
-  animation-delay: 0.2s;
-  animation-name: rotatelights;
-  animation-duration: 7s;
-  animation-iteration-count: infinite;
-  opacity: 0.6;
-}
-
 .purple-light {
-  display:inline-block;
-  background: url('https://static.gammatrix-dev.net/WonderlandCasino/img/casino-lights1.png') center top no-repeat transparent;
-  top: 100px;
-  right: 200px;
-  width: 261px;
-  height: 90vh;
-}
-
-.green-light {
-  display:inline-block;
-  animation-name: rotatelights2;
-  background: url('https://static.gammatrix-dev.net/WonderlandCasino/img/casino-lights2.png') center top no-repeat transparent;
-  top: 130px;
-  right: 0px;
-  bottom:0;
-  width: 346px;
-  height: 70vh;
-}
-
-@keyframes rotatelights {
-  0% {
-    transform: rotate(-25deg);
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #75261F30;/*var(--dark-maroon);*/
+  transform: skew(.312rad);
+  animation: flicker 2s ease-in-out alternate infinite;
+  }
+  
+  .green-light {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #E3C04829;/*var(--yellow-shade);*/
+  transform: skew(-0.06turn, 1deg);
+  animation: flicker 2s ease-in-out alternate-reverse infinite;
+  }
+  
+  @keyframes flicker {
+  0%, 100% {
+  opacity: 1;
   }
   50% {
-    transform: rotate(25deg);
+  opacity: 0.5;
   }
-  100% {
-    transform: rotate(-25deg);
   }
-}
-
-@keyframes rotatelights2 {
-  0% {
-    transform: rotate(-25deg);
-  }
-  50% {
-    transform: rotate(25deg);
-  }
-  100% {
-    transform: rotate(-25deg);
-    
-  }
-}
 
 footer {
   background: var(--tavern-red);
-  border-top:2px solid #468966;
+  /*border-top:2px solid #468966;*/
   color:white;
   text-align:center;
-  bottom:0;
-  left:0;
+  position: absolute;
+  bottom: 0;
   padding:10px;
-  width:99%;
+  width: 100%;
+}
+  footer > a {
+    color: var(--yellow-shade);
+    text-decoration: none;
+  }
+
+
+@media only screen and (max-width: 1024px) {
+  h1, #lucky {
+    font-size: 2rem;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  fieldset {
+    padding: 0;
+    max-width: 80%;
+  }
+  p {
+    font-size: 1.9rem;
+  }
+  .icon {
+    width: 22px;
+    height: 25px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  fieldset {
+    font-size: 2rem;
+    width: 80%;
+  }
+  .icon {
+    /*width: 15px;
+    height: 20px;*/
+    display: none;
+  }
+  input {
+    font-size: 1rem;
+  }
+  button {
+    font-size: 1.5rem;
+  }
+  #result {
+    font-size: 3rem;
+    width: 100px;
+    height: 99px;
+  }
+  #chip {
+    border: 8px dashed white;
+    width: 128px;
+    height: 120px;
+    margin: 20px auto;
+  }
+  .lights {
+    display: none;
+  }
+}
+  
+@media only screen and (max-width: 480px) {
+  fieldset {
+    font-size: 1.5rem;
+    width: 95%;
+  }
+  input {
+    font-size: 1rem;
+  }
+  button {
+    font-size: 1.2rem;
+  }
+  h1, #lucky {
+    font-size: 1.5rem;
+  }
+  .icon {
+    display: none;
+  }
+  #result {
+    font-size: 2rem;
+    width: 70px;
+    height: 70px;
+  }
+  #chip {
+    border: 5px dashed white;
+    width: 100px;
+    height: 100px;
+    margin: 15px auto;
+  }
 }
